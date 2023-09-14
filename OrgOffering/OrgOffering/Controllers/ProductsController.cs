@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using OrgOffering.Data;
 using OrgOffering.Models;
+using OrgOffering.Repository;
 
 namespace OrgOffering.Controllers
 {
@@ -20,10 +21,15 @@ namespace OrgOffering.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Product.ToListAsync());
+            ProductRepository productRepository = new ProductRepository();
+
+            var results = productRepository.GetAll();
+
+            return View(results);
         }
+
 
         // GET: Products/Details/5
         public async Task<IActionResult> Details(Guid? id)

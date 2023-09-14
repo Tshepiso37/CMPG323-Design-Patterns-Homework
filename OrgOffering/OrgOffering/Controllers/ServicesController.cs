@@ -7,23 +7,24 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using OrgOffering.Data;
 using OrgOffering.Models;
+using OrgOffering.Repository;
 
 namespace OrgOffering.Controllers
 {
     public class ServicesController : Controller
     {
-        private readonly CMPG323Context _context;
-
-        public ServicesController(CMPG323Context context)
+        private readonly iServiceRepository _serviceRepository;
+        public ServicesController(iServiceRepository serviceRepository)
         {
-            _context = context;
+            _serviceRepository = serviceRepository;
         }
 
         // GET: Services
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Service.ToListAsync());
+            return View(_serviceRepository.GetAll());
         }
+
 
         // GET: Services/Details/5
         public async Task<IActionResult> Details(Guid? id)
@@ -33,7 +34,7 @@ namespace OrgOffering.Controllers
                 return NotFound();
             }
 
-            var service = await _context.Service
+            var service = await _serviceRepository.Service
                 .FirstOrDefaultAsync(m => m.ServiceId == id);
             if (service == null)
             {
@@ -59,8 +60,8 @@ namespace OrgOffering.Controllers
             if (ModelState.IsValid)
             {
                 service.ServiceId = Guid.NewGuid();
-                _context.Add(service);
-                await _context.SaveChangesAsync();
+                _serviceRepository.Add(service);
+                await _serviceRepository.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(service);
@@ -74,7 +75,7 @@ namespace OrgOffering.Controllers
                 return NotFound();
             }
 
-            var service = await _context.Service.FindAsync(id);
+            var service = await _serviceRepository.Service.FindAsync(id);
             if (service == null)
             {
                 return NotFound();
@@ -98,8 +99,8 @@ namespace OrgOffering.Controllers
             {
                 try
                 {
-                    _context.Update(service);
-                    await _context.SaveChangesAsync();
+                    _serviceRepository.Update(service);
+                    await _serviceRepository.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -125,7 +126,7 @@ namespace OrgOffering.Controllers
                 return NotFound();
             }
 
-            var service = await _context.Service
+            var service = await _serviceRepository.Service
                 .FirstOrDefaultAsync(m => m.ServiceId == id);
             if (service == null)
             {
@@ -140,15 +141,15 @@ namespace OrgOffering.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var service = await _context.Service.FindAsync(id);
-            _context.Service.Remove(service);
-            await _context.SaveChangesAsync();
+            var service = await _serviceRepository.Service.FindAsync(id);
+            _serviceRepository.Service.Remove(service);
+            await _serviceRepository.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ServiceExists(Guid id)
         {
-            return _context.Service.Any(e => e.ServiceId == id);
+            return _serviceRepository.Service.Any(e => e.ServiceId == id);
         }
     }
 }

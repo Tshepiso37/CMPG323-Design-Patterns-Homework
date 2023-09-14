@@ -1,0 +1,9 @@
+C:\Users\itstudent\Desktop\CMPG323-Design-Patterns-Homework\OrgOffering\OrgOffering\obj\Debug\netcoreapp3.1\OrgOffering.csproj.AssemblyReference.cache
+C:\Users\itstudent\Desktop\CMPG323-Design-Patterns-Homework\OrgOffering\OrgOffering\obj\Debug\netcoreapp3.1\OrgOffering.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\itstudent\Desktop\CMPG323-Design-Patterns-Homework\OrgOffering\OrgOffering\obj\Debug\netcoreapp3.1\OrgOffering.AssemblyInfoInputs.cache
+C:\Users\itstudent\Desktop\CMPG323-Design-Patterns-Homework\OrgOffering\OrgOffering\obj\Debug\netcoreapp3.1\OrgOffering.AssemblyInfo.cs
+C:\Users\itstudent\Desktop\CMPG323-Design-Patterns-Homework\OrgOffering\OrgOffering\obj\Debug\netcoreapp3.1\OrgOffering.csproj.CoreCompileInputs.cache
+C:\Users\itstudent\Desktop\CMPG323-Design-Patterns-Homework\OrgOffering\OrgOffering\obj\Debug\netcoreapp3.1\OrgOffering.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\itstudent\Desktop\CMPG323-Design-Patterns-Homework\OrgOffering\OrgOffering\obj\Debug\netcoreapp3.1\OrgOffering.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\itstudent\Desktop\CMPG323-Design-Patterns-Homework\OrgOffering\OrgOffering\obj\Debug\netcoreapp3.1\OrgOffering.RazorAssemblyInfo.cache
+C:\Users\itstudent\Desktop\CMPG323-Design-Patterns-Homework\OrgOffering\OrgOffering\obj\Debug\netcoreapp3.1\OrgOffering.RazorAssemblyInfo.cs
