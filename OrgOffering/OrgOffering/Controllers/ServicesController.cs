@@ -22,8 +22,13 @@ namespace OrgOffering.Controllers
         // GET: Services
         public async Task<IActionResult> Index()
         {
-            return View(_serviceRepository.GetAll());
+            ProductRepository productRepository = new ProductRepository();
+
+            var results = productRepository.GetAll();
+
+            return View(results);
         }
+
 
 
         // GET: Services/Details/5

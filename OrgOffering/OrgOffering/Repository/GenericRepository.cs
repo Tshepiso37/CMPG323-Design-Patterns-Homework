@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace OrgOffering.Repository
 {
-    public class GenericRepository<T> : iGenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         protected readonly CMPG323Context _context;
         public GenericRepository(CMPG323Context context)
@@ -43,3 +43,4 @@ namespace OrgOffering.Repository
         }
     }
 }
+

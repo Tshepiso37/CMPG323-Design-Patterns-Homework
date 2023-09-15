@@ -21,7 +21,7 @@ namespace OrgOffering.Controllers
         }
 
         // GET: Products
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             ProductRepository productRepository = new ProductRepository();
 
@@ -29,6 +29,7 @@ namespace OrgOffering.Controllers
 
             return View(results);
         }
+
 
 
         // GET: Products/Details/5

@@ -1,6 +1,9 @@
-﻿namespace OrgOffering.Repository
+﻿using OrgOffering.Models;
+
+namespace OrgOffering.Repository
 {
-    public class iProductRepoaitory
+    public interface iProductRepository : IGenericRepository<Product>
     {
+        Product GetMostRecentService();
     }
 }

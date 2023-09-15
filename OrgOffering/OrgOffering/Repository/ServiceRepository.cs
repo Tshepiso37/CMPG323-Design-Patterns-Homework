@@ -17,11 +17,6 @@ namespace OrgOffering.Repository
         {
             return _context.Service.OrderByDescending(service => service.CreatedDate).FirstOrDefault();
         }
-
-        public async Task<List<Service>> GetServicesAsync()
-        {
-            // Implement the method to retrieve a list of services asynchronously
-            return await _context.Service.ToListAsync();
-        }
     }
 }
+

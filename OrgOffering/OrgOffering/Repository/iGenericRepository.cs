@@ -4,7 +4,7 @@ using System;
 
 namespace OrgOffering.Repository
 {
-    public interface iGenericRepository<T> where T : class
+    public interface IGenericRepository<T> where T : class
     {
         T GetById(int id);
         IEnumerable<T> GetAll();
@@ -14,5 +14,6 @@ namespace OrgOffering.Repository
         void Remove(T entity);
         void RemoveRange(IEnumerable<T> entities);
     }
+
 
 }
